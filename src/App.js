@@ -7,18 +7,46 @@ marked.setOptions({ breaks: true});
 
 const placeholder =
 {defaultState: `
-Paragraph
-**Bold Text**
+# Heading Size H1
+## Heading Size H2
+### Heading Size H3
+#### Heading Size H4
+##### Heading Size H5
+###### Heading Size h6
+
+This is a Paragraph!
+
+**Bold Text** 
+
+_italic text_
+
+
 > Block Quotes!
-# Heading Size 1
-## Heading Size 2
+
 - List Item
-- Another List Iterm
-![Link](https://github.com/RoarAbiye)
-\`\`\`javascript:
-    var add2 = function(number) {
-      return number + 2;
-    }
+- Another List Item
+  - Nested List Item
+
+1. Number list item
+2. Another item in Number list item
+
+- [x] DONE! Task list item
+- [ ] TODO! Task list item
+
+A link:
+[Check Out My Github Account](https://github.com/RoarAbiye)
+
+An Image:
+![image](https://picsum.photos/200)
+
+In line Code quote
+\`print(inline code)\`
+
+A block of code:
+\`\`\`javascript
+   function addNums (num1, num2) {
+      console.log(num1+num2);
+   }
 \`\`\`
 `};
 
@@ -41,8 +69,12 @@ class App extends Component {
         return (
             <wrapper id="wrapper">
             <ReactFCCtest />
-            <div>
+            <div id="editor-group">
+            <h2 className="heading">Input</h2>
                 <textarea id="editor" value={this.state.markup}  onChange={this.handleChange} />
+            </div>
+            <div id="preview-group">
+            <h2 className="heading"> Markdown preview</h2>
                 <div id="preview" value={this.state.markup} dangerouslySetInnerHTML={this.getMarkdownText()} />
             </div>
       </wrapper>
