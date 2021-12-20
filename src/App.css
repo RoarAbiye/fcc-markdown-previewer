@@ -53,3 +53,12 @@ textarea:focus {
     border-width: 0px 0px 0px thick;
     border-color: #ff7700;
 }
+
+@media (max-width: 800px) {
+    #editor {
+        font-size: 1em;
+        width: 200px;
+    }   
+    #preview {
+    }   
+}
