@@ -2,9 +2,10 @@
   text-align: center;
 }
 body {
-background-color: #181D31;
-display: flex;
-justify-content: center;
+background-color: #E6DDC4;
+display: grid;
+grid-column-gap: 1em;
+grid-template-columns: 1fr;
 }
 .heading {
     color: #181D31;
@@ -24,16 +25,18 @@ justify-content: center;
     width: 500px;
     margin: 10px;
     background-color: #E6DDC4;
-    border: none;
     font-size: 18px;
-    box-sizing: border-box;
-    border: none;
+    border-width: 0px 0px 0px thick;
+    border-color: #ff7700;
     resize: none;
     color: #181D31;
     padding: 10px;
+
+
 }
 textarea:focus {
-    border: none;
+    border-color: #ffffff;
+    outline: none;
 }
 #preview {
     float: right;
@@ -47,4 +50,6 @@ textarea:focus {
     flex-shrink: 1;
     overflow: auto;
     padding: 10px;
+    border-width: 0px 0px 0px thick;
+    border-color: #ff7700;
 }
