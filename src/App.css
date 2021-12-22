@@ -2,63 +2,78 @@
   text-align: center;
 }
 body {
-background-color: #E6DDC4;
-display: grid;
-grid-column-gap: 1em;
-grid-template-columns: 1fr;
+ background-color: #ddd;
 }
-.heading {
-    color: #181D31;
-    text-align: center;
-    border-radius: 2px; 
-    background-color: #678983;
-    margin: 10px;
-}
-
 #wrapper {
-    padding-top: 3rem;
-    display: flex;
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ align-self: stretch;
+ grid-gap: 5em;
 }
-#editor {
-    float: left;
-    height: 100vh;
-    width: 500px;
-    margin: 10px;
-    background-color: #E6DDC4;
-    font-size: 18px;
-    border-width: 0px 0px 0px thick;
-    border-color: #ff7700;
-    resize: none;
-    color: #181D31;
-    padding: 10px;
-
-
-}
-textarea:focus {
-    border-color: #ffffff;
-    outline: none;
-}
-#preview {
-    float: right;
-    height: 98vh;
-    width: 500px;
-    margin: 10px;
-    padding: 10px;
-    background-color: #E6DDC4;
-    color: #181D31;
-    flex-basis: 50%;
-    flex-shrink: 1;
-    overflow: auto;
-    padding: 10px;
-    border-width: 0px 0px 0px thick;
-    border-color: #ff7700;
+#editor-group {
+ height: 100vh;
+ width: 100%;
+ margin: 5em;
+ padding: 0.5em;
+ border-radius: 1em;
+ border-style:none none none solid;
+ border-width: .5em;
+ border-color: #ccc;
 }
 
-@media (max-width: 800px) {
-    #editor {
-        font-size: 1em;
-        width: 200px;
-    }   
-    #preview {
-    }   
+#editor{
+ height:90%;
+ width: 100%;
+ background-color: #ddd;
+ color: #181D31;
+ font-size: 18px;
+ border-style:none none none none;
+}
+
+textarea {
+ outline: none;
+ resize: none;
+}
+
+#preview-group {
+ float: right;
+ height: 98vh;
+ width: 100%;
+ margin: 5em;
+ background-color: #ddd;
+ color: #181D31;
+ overflow: auto;
+ padding: 1em;
+ border-radius: 1em;
+ border-style:none none none solid;
+ border-width: .5em;
+ border-color: #ccc;
+}
+
+@media (max-width: 810px) {
+ #wrapper {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  grid-gap: 0.5em;
+  margin-top: 2em;
+ }
+ #editor {
+     height: 35vh;
+     margin: 0px;
+     width: 90vw;
+ }
+
+ #preview {
+     margin: .25em;
+     height: 55vh;
+     width: 90vw;
+ }
+}
+
+#preview-heading {
+    color: red;
+}
+#editor-heading {
+    color: red;
 }

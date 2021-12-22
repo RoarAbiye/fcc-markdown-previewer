@@ -4,7 +4,6 @@ import React, { Component } from 'react';
 import { marked } from 'marked';
 
 marked.setOptions({ breaks: true});
-
 const placeholder =
 {defaultState: `
 # Heading Size H1
@@ -49,7 +48,19 @@ A block of code:
    }
 \`\`\`
 `};
-
+const lableStyle = {
+ 'border-radius': '.35em',
+ 'border-style':'none none solid none',
+ 'border-width': '.35em',
+ 'margine': '.1em',
+ 'border-color': '#ccc',
+ 'background-image': 'linear-gradient(to right, #eee , #ddd)',
+ 'color': '#999',
+ 'position': '-webkit-sticky',
+ 'position': 'sticky',
+ 'top':'0',
+ 'padding-left': '1em'
+}
 class App extends Component { 
     constructor(props) {
         super(props);
@@ -67,17 +78,20 @@ class App extends Component {
 
     render () {
         return (
-            <wrapper id="wrapper">
+      <div>
             <ReactFCCtest />
+            
+        <wrapper id="wrapper">
             <div id="editor-group">
-            <h2 className="heading">Input</h2>
+            <h3 className="editor-heading" style={lableStyle}>Input</h3>
                 <textarea id="editor" value={this.state.markup}  onChange={this.handleChange} />
             </div>
             <div id="preview-group">
-            <h2 className="heading"> Markdown preview</h2>
+            <h3 className="preview-heading" style={lableStyle}> Markdown Preview</h3>
                 <div id="preview" value={this.state.markup} dangerouslySetInnerHTML={this.getMarkdownText()} />
             </div>
-      </wrapper>
+        </wrapper>
+      </div>
   )};
 }
 
